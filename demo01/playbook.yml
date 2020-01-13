@@ -1,0 +1,18 @@
+- hosts: orion
+  remote_user: orion
+  tasks:
+    - name: "instalar nginx"
+      apt: name=nginx state=latest
+    - name: "start nginx"
+      service:
+        name: nginx
+        state: started
+- hosts: denjos
+  remote_user: denjos
+  tasks:
+    - name: "instalar nginx"
+      apt: name=nginx state=latest
+    - name: "start nginx"
+      service:
+        name: nginx
+        state: started
